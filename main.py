@@ -39,7 +39,7 @@ def get_current_info():
     elif user_input.lower() == "last name":
         print(info_dict["last_name"])
     elif user_input.lower() == "address":
-        print(info_dict[])
+        print(info_dict["address"])
     
 
 
