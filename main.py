@@ -25,13 +25,14 @@ def get_current_info():
     user_input = input("Please enter a name you want to search (first and last): ")
 
     try:
-        user_file = open(f"entries\\{user_input}.json", "w+")
+        user_file = open(f"entries\\{user_input}.json", "r+")
         info_dict = json.loads(user_file.read())
+        global info_dict
 
         print("File found! Proceeding to next step...")
-    except:
-        print("Sorry, file not found! Please restart the program.")
-
+    # except:
+    #     print("Sorry, file not found! Please restart the program.")
+ 
     user_input = input("Please enter the information you want to get. (First name, last name, address, phone number)")
     
     if user_input.lower() == "first name":
@@ -40,8 +41,11 @@ def get_current_info():
         print(info_dict["last_name"])
     elif user_input.lower() == "address":
         print(info_dict["address"])
+    elif user_input.lower() == "phone number":
+        print(info_dict["phone_num"])
+    else:
+        print("That\'s not a valid query!")
     
-
 
 if start == "new":
     get_new_info()
