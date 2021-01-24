@@ -1,6 +1,6 @@
 import json
 
-start = input("\"New\" or \"Current\" ")
+start = input("Type \"New\" for a new file, or \"Current\" to grab a current file (in the entries folder)")
 
 def get_new_info():
     first_name = input("First Name: ")
@@ -29,7 +29,7 @@ def get_current_info():
     except FileNotFoundError:
         print("Sorry, file not found! Please restart the program.")
         exit()
-        
+
     global info_dict
     info_dict = json.loads(user_file.read())
 
