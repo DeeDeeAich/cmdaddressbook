@@ -26,15 +26,16 @@ def get_current_info():
 
     try:
         user_file = open(f"entries\\{user_input}.json", "r+")
-        info_dict = json.loads(user_file.read())
-        global info_dict
+    except FileNotFoundError:
+        print("Sorry, file not found! Please restart the program.")
+        exit()
+        
+    global info_dict
+    info_dict = json.loads(user_file.read())
 
-        print("File found! Proceeding to next step...")
-    # except:
-    #     print("Sorry, file not found! Please restart the program.")
- 
+    print("File found! Proceeding to next step...")
+
     user_input = input("Please enter the information you want to get. (First name, last name, address, phone number)")
-    
     if user_input.lower() == "first name":
         print(info_dict["first_name"])
     elif user_input.lower() == "last name":
