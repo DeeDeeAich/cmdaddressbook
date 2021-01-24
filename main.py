@@ -1,6 +1,6 @@
 import json
 
-start = input("Type \"New\" for a new file, or \"Current\" to grab a current file (in the entries folder)")
+start = input("Type \"New\" for a new file, or \"Current\" to grab a current file (in the entries folder) ")
 
 def get_new_info():
     first_name = input("First Name: ")
